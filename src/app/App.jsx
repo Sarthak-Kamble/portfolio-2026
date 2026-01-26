@@ -1,13 +1,22 @@
 import "../App.css";
+import "../index.css";
 import Navbar from "../components/Navbar";
 import HeroSection from "../sections/heroSection/HeroSection";
+import { useSelector } from "react-redux";
+import { selectPortfolioSlice } from "../portfolioSlice";
 
 function App() {
+  const { isDarkMode } = useSelector(selectPortfolioSlice);
+
   return (
-    <div className={`appContainer bg-cyan-950 items-center flex flex-col`}>
+    <div
+      className={`${isDarkMode ? `dark` : ``} appContainer items-center flex flex-col`}
+    >
       <Navbar />
       <HeroSection />
-      <div className="bg-white p-4">
+      <div
+        className={`border-t border-neutral-500/40 px-20 py-10 duration-300 transition-all ease-in-out ${isDarkMode ? `dark:bg-dark dark:text-white` : ``}`}
+      >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum unde
         quo quidem soluta cumque eius adipisci, delectus suscipit a voluptatum
         dolore modi accusamus vero sunt magni eveniet, placeat voluptates

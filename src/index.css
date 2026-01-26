@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #ffff;
+  --color-dark: #171717;
+}
+
+/* Custom Font Classes */
+.font-doto {
+  font-family: "Doto", sans-serif;
+}
+
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.font-public-sans {
+  font-family: "Public Sans", sans-serif;
+}
