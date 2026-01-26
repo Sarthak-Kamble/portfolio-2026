@@ -31,7 +31,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${isDarkMode ? `bg-gray-400/10 border-gray-200/30` : `border-gray-300`} fixed p-4 rounded-2xl top-6 border shadow bg-opacity-90 backdrop-blur-sm z-50 transition-transform w-fit lg:w-1/3 duration-500 ease-in-out ${isVisible ? "translate-y-0" : "-translate-y-40"}`}
+      className={`${isDarkMode ? `bg-gray-400/10 border-gray-200/30` : `border-gray-300`} fixed p-4 rounded-2xl top-6 border shadow bg-opacity-90 backdrop-blur-sm z-50 transition-transform w-fit lg:w-1/3 duration-500 ease-in-out 
+      ${isVisible ? "translate-y-0" : "-translate-y-40"}`}
     >
       <div className="px-3">
         <div className="flex justify-between items-center gap-22">
