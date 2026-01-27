@@ -1,20 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getLocal, setLocal } from "./utils/helpers";
+
+let initialTheme = getLocal("theme");
+if (!initialTheme) {
+  initialTheme = "Dark";
+  setLocal("theme", "Dark");
+}
 
 const initialState = {
-  isDarkMode: true,
+  theme: initialTheme,
 };
 
 export const portfolioSlice = createSlice({
   name: "portfolio",
   initialState,
   reducers: {
-    setIsDarkMode: (state, action) => {
-      state.isDarkMode = action.payload;
+    setTheme: (state, action) => {
+      state.theme = action.payload;
+      setLocal("theme", action.payload);
     },
   },
 });
 
-export const { setIsDarkMode } = portfolioSlice.actions;
+export const { setTheme } = portfolioSlice.actions;
 
 export const selectPortfolioSlice = (state) => state.portfolioMain;
 

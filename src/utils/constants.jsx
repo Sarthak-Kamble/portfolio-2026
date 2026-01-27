@@ -7,25 +7,25 @@ export const navlist = [
   {
     id: 1,
     navText: "Home",
-    icon: <LiaHomeSolid className="w-6 h-6" />,
-    link: "#home",
+    icon: <LiaHomeSolid className="w-5 h-5" />,
+    link: "/",
   },
   {
     id: 2,
     navText: "Experience",
-    icon: <BiBriefcaseAlt className="w-6 h-6" />,
-    link: "#experience",
+    icon: <BiBriefcaseAlt className="w-5 h-5" />,
+    link: "/experience",
   },
   {
     id: 3,
     navText: "Projects",
-    icon: <LuFolderCode className="w-6 h-6" />,
-    link: "#projects",
+    icon: <LuFolderCode className="w-5 h-5" />,
+    link: "/projects",
   },
   {
     id: 4,
     navText: "Contact",
-    icon: <BiEnvelope className="w-6 h-6" />,
-    link: "#contact",
+    icon: <BiEnvelope className="w-5 h-5" />,
+    link: "/contact",
   },
 ];
