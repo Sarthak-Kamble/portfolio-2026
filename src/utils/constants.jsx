@@ -10,12 +10,12 @@ export const navlist = [
     icon: <LiaHomeSolid className="w-5 h-5" />,
     link: "/",
   },
-  {
-    id: 2,
-    navText: "Experience",
-    icon: <BiBriefcaseAlt className="w-5 h-5" />,
-    link: "/experience",
-  },
+  // {
+  //   id: 2,
+  //   navText: "Experience",
+  //   icon: <BiBriefcaseAlt className="w-5 h-5" />,
+  //   link: "/experience",
+  // },
   {
     id: 3,
     navText: "Projects",

@@ -3,7 +3,7 @@ import "../index.css";
 import Navbar from "../components/Navbar";
 import { useSelector } from "react-redux";
 import { selectPortfolioSlice } from "../portfolioSlice";
-import HomeSection from "../sections/heroSection/HomeSection";
+import HomeSection from "../sections/home/HomeSection";
 
 function App() {
   const { theme } = useSelector(selectPortfolioSlice);
