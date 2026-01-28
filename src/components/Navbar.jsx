@@ -4,6 +4,7 @@ import { AiOutlineSun } from "react-icons/ai";
 import { AiOutlineMoon } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { selectPortfolioSlice, setTheme } from "../portfolioSlice";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -41,12 +42,12 @@ const Navbar = () => {
             {navlist?.map((data) => {
               return (
                 <li className="" key={`${data?.navText}+${data?.id}`}>
-                  <a
-                    href="#home"
+                  <Link
+                    to={data?.link}
                     className={`${theme === "Dark" ? `text-white hover:text-violet-400` : `text-gray-500 hover:text-violet-400`} transition-colors ease-in-out duration-300`}
                   >
                     {data?.icon}
-                  </a>
+                  </Link>
                 </li>
               );
             })}
