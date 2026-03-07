@@ -5,41 +5,58 @@ import { selectPortfolioSlice } from "../../portfolioSlice";
 import ProfilePic2 from "../../../assets/profile_pic_2.jpg";
 import ProfilePic1 from "../../../assets/profile_pic_1.png";
 import { motion } from "framer-motion";
+import { BsEnvelope } from "react-icons/bs";
 
 const HomeSection = () => {
   const { theme } = useSelector(selectPortfolioSlice);
 
   return (
     <div
-      className={`w-full h-full flex items-center justify-center py-24 max-w-[60%] mx-auto shadow-md`}
+      className={`h-full flex items-center justify-center py-28 border lg:border-l lg:border-r w-full lg:w-[60%] mx-auto shadow 
+        ${theme === "Dark" ? "border-neutral-700" : "border-neutral-100"}
+      `}
     >
       <div className={`flex flex-col items-center h-full justify-start w-full`}>
         <motion.div
           initial={{ opacity: 0, filter: "blur(12px)" }}
           animate={{ opacity: 1, filter: "blur(0px)" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className={`h-fit items-center flex select-none flex-col p-10 gap-8 font-public-sans ${theme === "Dark" ? `dark:text-white` : `text-[#121212]`}`}
+          className={`h-fit items-center flex select-none flex-col p-6 gap-4 lg:gap-6 font-public-sans ${theme === "Dark" ? `dark:text-white` : `text-[#121212]`}`}
         >
-          <div
-            className={`p-1 border rounded-full  ${theme === "Dark" ? ` border-white/10` : `border-gray-200 shadow`}`}
+          <motion.div
+            className={`p-1 border-2 rounded-full ${
+              theme === "Dark" ? `border-violet-500` : `border-gray-200 shadow`
+            }`}
+            animate={{
+              y: [0, -6, 0], // subtle float
+              rotate: [0, 2.5, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
           >
-            <img
-              src={ProfilePic1}
-              alt=""
-              className="rounded-full w-36 h-36 bg-contain"
-            />
-          </div>
-          <div className="flex flex-col gap-8 items-center justify-center text-center">
-            <div className="flex flex-col items-center justify-center">
-              <div className="text-3xl lg:text-6xl text-center font-bold">
+            <div className="rounded-full overflow-hidden">
+              <img
+                src={ProfilePic1}
+                alt=""
+                className="w-36 h-36 object-cover"
+              />
+            </div>
+          </motion.div>
+
+          <div className="flex flex-col gap-4 lg:gap-5 items-center justify-center">
+            <div className="flex flex-col gap-0 lg:gap-4 text-center">
+              <div className="text-4xl lg:text-5xl font-bold">
                 Hey, I'm Sarthak Kamble
               </div>
-              <div className={`text-3xl lg:text-6xl font-bold`}>
+              <div className={`text-4xl lg:text-5xl font-bold`}>
                 Frontend Engineer
               </div>
             </div>
             <div
-              className={`text-xl px-2 w-full lg:w-[50%] ${theme === "Dark" ? "text-neutral-400" : "text-neutral-600"}`}
+              className={`text-xl w-full lg:w-[85%] text-center ${theme === "Dark" ? "text-neutral-400" : "text-neutral-600"}`}
             >
               I craft intuitive web experiences where design meets
               functionality. I’m a frontend engineer passionate about building
@@ -47,12 +64,26 @@ const HomeSection = () => {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <button className="bg-yellow-300 px-3 py-2 font-bold text-black rounded-lg cursor-pointer">
-              Contact me
+            <button
+              className={`flex items-center gap-2 px-4 py-2 font-bold rounded-lg cursor-pointer hover:scale-95 duration-100 ease-in-out
+                  ${theme === "Dark" ? "bg-violet-500/70 text-white" : "bg-violet-600 text-white"}
+                `}
+            >
+              <BsEnvelope />
+              <span>Let's Connect</span>
             </button>
-            <button className="bg-white px-3 py-2 font-bold text-black rounded-lg cursor-pointer">
-              Resume
-            </button>
+            <div
+              className={`relative flex items-center gap-4 px-4 py-2 rounded-lg
+                ${theme === "Dark" ? "bg-green-800/20" : "border border-gray-100 shadow"}
+                `}
+            >
+              <span className="relative flex items-center justify-center h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              </span>
+
+              <span className="text-green-500">Open to work</span>
+            </div>
           </div>
         </motion.div>
 
@@ -96,28 +127,6 @@ const HomeSection = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-          className="w-full px-8 py-20 max-w-4xl mx-auto"
-        >
-          <h2
-            className={`text-2xl font-bold ${theme === "Dark" ? `text-white` : `text-neutral-700`}`}
-          >
-            More About Me
-          </h2>
-          <p
-            className={`text-lg leading-relaxed ${theme === "Dark" ? `text-neutral-300` : `text-neutral-600`}`}
-          >
-            I'm a passionate Frontend Engineer and curious builder who enjoys
-            transforming ideas into engaging web interfaces. Self-taught and
-            constantly learning, I love experimenting with modern web
-            technologies and bringing creative concepts to life through clean,
-            thoughtful code.
-          </p>
         </motion.div>
       </div>
     </div>
