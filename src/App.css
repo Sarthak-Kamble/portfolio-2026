@@ -19,12 +19,5 @@ body {
 }
 
 .componentContainer {
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-@keyframes growCircle {
-  to {
-    transform: scale(100);
-  }
+  /* margin: 0 auto; */
 }

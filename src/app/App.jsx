@@ -18,7 +18,7 @@ function App() {
       >
         <Navbar />
         <div
-          className={`componentContainer border-l border-r ${theme === "Dark" ? `border-neutral-500/40` : `border-neutral-200`} w-full flex-1 flex flex-col transition-colors duration-500`}
+          className={`componentContainer ${theme === "Dark" ? `border-neutral-500/40` : `border-neutral-200`} w-full flex-1 flex flex-col transition-colors duration-500`}
         >
           <Routes>
             <Route path="/" element={<HomeSection />} />

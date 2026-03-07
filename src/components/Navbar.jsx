@@ -10,8 +10,6 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const { theme } = useSelector(selectPortfolioSlice);
 
-  console.log(theme);
-
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const toggleRef = useRef(null);
@@ -33,18 +31,18 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${theme === "Dark" ? `bg-gray-400/10 border-gray-200/30` : `border-gray-300`} fixed p-3 rounded-4xl top-6 border shadow bg-opacity-90 backdrop-blur-sm z-50 transition-transform w-fit lg:w-1/4 duration-500 ease-in-out 
+      className={`${theme === "Dark" ? `bg-gray-400/10 border-gray-200/30` : `bg-white/50 border-gray-300`} w-fit md:w-[40%] lg:w-[40%] fixed p-4 rounded-lg top-6 border shadow bg-opacity-90 backdrop-blur-md z-40 transition-transform duration-500 ease-in-out 
       ${isVisible ? "translate-y-0" : "-translate-y-40"}`}
     >
       <div className="px-3">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center gap-32 lg:gap-0">
           <ul className="flex items-center gap-8">
             {navlist?.map((data) => {
               return (
                 <li className="" key={`${data?.navText}+${data?.id}`}>
                   <Link
                     to={data?.link}
-                    className={`${theme === "Dark" ? `text-white hover:text-violet-400` : `text-gray-500 hover:text-violet-400`} transition-colors ease-in-out duration-300`}
+                    className={`${theme === "Dark" ? `text-white` : `text-gray-500`} transition-colors ease-in-out duration-300`}
                   >
                     {data?.icon}
                   </Link>
@@ -61,9 +59,9 @@ const Navbar = () => {
             }}
           >
             {theme === "Dark" ? (
-              <AiOutlineSun className="w-5 h-5 dark:text-white hover:text-violet-400" />
+              <AiOutlineSun className="w-5 h-5 dark:text-white " />
             ) : (
-              <AiOutlineMoon className="w-5 h-5 text-gray-500 hover:text-violet-400" />
+              <AiOutlineMoon className="w-5 h-5 text-gray-500 " />
             )}
           </div>
         </div>

@@ -2,36 +2,55 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectPortfolioSlice } from "../../portfolioSlice";
-import ProfilePic5 from "../../../assets/profile_5.jpg";
+import ProfilePic2 from "../../../assets/profile_pic_2.jpg";
+import ProfilePic1 from "../../../assets/profile_pic_1.png";
 import { motion } from "framer-motion";
 
 const HomeSection = () => {
   const { theme } = useSelector(selectPortfolioSlice);
 
   return (
-    <div className={`w-full h-full flex items-center justify-center`}>
+    <div className={`w-full h-full flex items-center justify-center py-20`}>
       <div className={`flex flex-col items-center h-full justify-start w-full`}>
         <motion.div
           initial={{ opacity: 0, filter: "blur(12px)" }}
           animate={{ opacity: 1, filter: "blur(0px)" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className={`h-fit items-center flex py-40 flex-col gap-8 w-1/2 font-public-sans ${theme === "Dark" ? `dark:text-white` : `text-neutral-700`}`}
+          className={`h-fit items-center flex select-none flex-col p-10 gap-8 font-public-sans ${theme === "Dark" ? `dark:text-white` : `text-[#121212]`}`}
         >
           <div
-            className={`p-1 border rounded-full ${theme === "Dark" ? ` border-white/10` : `border-gray-200 shadow`}`}
+            className={`p-1 border rounded-full  ${theme === "Dark" ? ` border-white/10` : `border-gray-200 shadow`}`}
           >
-            <img src={ProfilePic5} alt="" className="rounded-full w-30 h-30" />
+            <img
+              src={ProfilePic1}
+              alt=""
+              className="rounded-full w-36 h-36 bg-contain"
+            />
           </div>
-          <div className="flex flex-col text-center gap-3">
-            <div className="text-5xl font-bold">Hello,</div>
-            <div className="lg:text-5xl font-bold tracking-wider">
-              I'm Sarthak Kamble
+          <div className="flex flex-col gap-8 items-center justify-center text-center">
+            <div className="flex flex-col items-center justify-center">
+              <div className="text-3xl lg:text-6xl text-center font-bold">
+                Hey, I'm Sarthak Kamble
+              </div>
+              <div className={`text-3xl lg:text-6xl font-bold`}>
+                Frontend Engineer
+              </div>
             </div>
             <div
-              className={`lg:text-5xl font-bold p-2 bg-violet-400 rounded-md w-fit mx-auto ${theme === "Dark" ? "text-[#171717]" : "text-white"}`}
+              className={`text-xl px-2 w-full lg:w-[50%] ${theme === "Dark" ? "text-neutral-400" : "text-neutral-600"}`}
             >
-              Frontend Engineer
+              I craft intuitive web experiences where design meets
+              functionality. I’m a frontend engineer passionate about building
+              fast, responsive, and delightful interfaces on the web.
             </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <button className="bg-yellow-300 px-3 py-2 font-bold text-black rounded-lg cursor-pointer">
+              Buy me Coffee
+            </button>
+            <button className="bg-white px-3 py-2 font-bold text-black rounded-lg cursor-pointer">
+              Contact me
+            </button>
           </div>
         </motion.div>
 
@@ -77,7 +96,6 @@ const HomeSection = () => {
           </div>
         </motion.div>
 
-        {/* About Me Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -85,19 +103,18 @@ const HomeSection = () => {
           className="w-full px-8 py-20 max-w-4xl mx-auto"
         >
           <h2
-            className={`text-3xl font-bold mb-6 ${theme === "Dark" ? `text-white` : `text-neutral-700`}`}
+            className={`text-2xl font-bold ${theme === "Dark" ? `text-white` : `text-neutral-700`}`}
           >
-            About Me
+            More About Me
           </h2>
           <p
             className={`text-lg leading-relaxed ${theme === "Dark" ? `text-neutral-300` : `text-neutral-600`}`}
           >
-            I'm a passionate Frontend Engineer with a love for creating
-            beautiful and interactive user experiences. With expertise in modern
-            web technologies like React, Tailwind CSS, and Framer Motion, I
-            build responsive applications that combine aesthetics with
-            functionality. When I'm not coding, you can find me exploring new
-            design trends or contributing to open-source projects.
+            I'm a passionate Frontend Engineer and curious builder who enjoys
+            transforming ideas into engaging web interfaces. Self-taught and
+            constantly learning, I love experimenting with modern web
+            technologies and bringing creative concepts to life through clean,
+            thoughtful code.
           </p>
         </motion.div>
       </div>

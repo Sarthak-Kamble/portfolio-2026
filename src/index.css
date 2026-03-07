@@ -3,8 +3,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: #ffff;
-  --color-dark: #171717;
+  --color-primary: #f1f1f1f1;
+  --color-dark: #111;
 }
 
 /* Custom Font Classes */
