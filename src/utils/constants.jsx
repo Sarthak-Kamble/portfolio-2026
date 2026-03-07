@@ -8,7 +8,7 @@ export const navlist = [
     id: 1,
     navText: "Home",
     icon: <LiaHomeSolid className="w-5 h-5" />,
-    link: "/",
+    link: "/portfolio-2026",
   },
   // {
   //   id: 2,
@@ -20,12 +20,12 @@ export const navlist = [
     id: 3,
     navText: "Projects",
     icon: <LuFolderCode className="w-5 h-5" />,
-    link: "/projects",
+    link: "/portfolio-2026/projects",
   },
   {
     id: 4,
     navText: "Contact",
     icon: <BiEnvelope className="w-5 h-5" />,
-    link: "/contact",
+    link: "/portfolio-2026/contact",
   },
 ];

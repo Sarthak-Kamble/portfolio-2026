@@ -21,9 +21,9 @@ function App() {
           className={`componentContainer ${theme === "Dark" ? `border-neutral-500/40` : `border-neutral-200`} w-full flex-1 flex flex-col transition-colors duration-500`}
         >
           <Routes>
-            <Route path="/" element={<HomeSection />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/portfolio-2026/" element={<HomeSection />} />
+            <Route path="/portfolio-2026/projects" element={<Projects />} />
+            <Route path="/portfolio-2026/contact" element={<Contact />} />
           </Routes>
         </div>
       </div>
