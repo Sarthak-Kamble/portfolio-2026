@@ -6,13 +6,14 @@ import ProfilePic2 from "../../../assets/profile_pic_2.jpg";
 import ProfilePic1 from "../../../assets/profile_pic_1.png";
 import { motion } from "framer-motion";
 import { BsEnvelope } from "react-icons/bs";
+import TechStack from "./skills/TechStack";
 
 const HomeSection = () => {
   const { theme } = useSelector(selectPortfolioSlice);
 
   return (
     <div
-      className={`h-full flex items-center justify-center py-28 border lg:border-l lg:border-r w-full lg:w-[60%] mx-auto shadow 
+      className={`h-full flex items-center justify-center py-28 lg:border-l lg:border-r w-full lg:w-[60%] mx-auto shadow 
         ${theme === "Dark" ? "border-neutral-700" : "border-neutral-100"}
       `}
     >
@@ -87,47 +88,9 @@ const HomeSection = () => {
           </div>
         </motion.div>
 
-        {/* Dummy Cards Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          className="w-full px-8 py-20"
-        >
-          <h2
-            className={`text-3xl font-bold mb-10 text-center ${theme === "Dark" ? `text-white` : `text-neutral-700`}`}
-          >
-            Featured Skills
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl mx-auto">
-            {[1, 2, 3].map((card) => (
-              <motion.div
-                key={card}
-                whileHover={{ y: -5 }}
-                className={`p-6 rounded-lg border ${
-                  theme === "Dark"
-                    ? `bg-neutral-900 border-neutral-800 hover:border-violet-400`
-                    : `bg-white border-gray-200 hover:border-violet-400 shadow`
-                } transition-colors duration-300`}
-              >
-                <div className="w-12 h-12 bg-violet-400 rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">{card}</span>
-                </div>
-                <h3
-                  className={`text-lg font-bold mb-2 ${theme === "Dark" ? `text-white` : `text-neutral-700`}`}
-                >
-                  Skill {card}
-                </h3>
-                <p
-                  className={`text-sm ${theme === "Dark" ? `text-neutral-400` : `text-neutral-500`}`}
-                >
-                  This is a dummy card to showcase your skills and expertise.
-                  You can replace this with your actual content.
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        <div className="w-full flex items-center justify-center">
+          <TechStack />
+        </div>
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
       <div
-        className={`${theme === "Dark" ? `bg-dark` : `bg-primary`} appContainer min-h-screen items-center flex flex-col`}
+        className={`min-h-full ${theme === "Dark" ? `bg-dark` : `bg-primary`} appContainer min-h-screen items-center flex flex-col`}
       >
         <Navbar />
         <div
