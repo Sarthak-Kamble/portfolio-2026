@@ -94,37 +94,33 @@ const TechStack = () => {
         <TechCard
           title={"Frontend Technologies"}
           description={
-            "Core frontend technologies I rely on to build performant, maintainable, and user-friendly interfaces."
+            "Building UI with React, TypeScript, and modern styling/patterns."
           }
           data={frontendTech}
         />
         <TechCard
           title={"Backend Technologies"}
           description={
-            "Core backend technologies I rely on to build performant, maintainable, and user-friendly interfaces."
+            "Building APIs and server logic with Node.js and fast frameworks."
           }
           data={backendTech}
         />
         <TechCard
           title={"Databases"}
-          description={
-            "Core databases I rely on to build performant, maintainable, and user-friendly interfaces."
-          }
+          description={"Data storage and querying using Postgres and MongoDB."}
           data={databases}
         />
         <TechCard
           title={"Developer Tools"}
           description={
-            "Core frontend technologies I rely on to build performant, maintainable, and user-friendly interfaces."
+            "Tooling for source control, CI, containers, and productivity."
           }
           data={devTools}
         />
 
         <TechCard
           title={"AI Tools"}
-          description={
-            "Core frontend technologies I rely on to build performant, maintainable, and user-friendly interfaces."
-          }
+          description={"AI-powered coding assistants and productivity helpers."}
           data={aiTools}
         />
       </div>
