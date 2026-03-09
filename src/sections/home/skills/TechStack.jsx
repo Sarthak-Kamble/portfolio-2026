@@ -7,19 +7,22 @@ import {
   devTools,
   frontendTech,
 } from "../../../utils/constants";
+import { useSelector } from "react-redux";
+import { selectPortfolioSlice } from "../../../portfolioSlice";
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
+  hidden: (custom) => ({ opacity: 0, y: custom?.initialY ?? 24 }),
+  visible: (custom) => ({
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.32,
+      duration: custom?.duration ?? 0.32,
       ease: "easeOut",
       when: "beforeChildren",
-      staggerChildren: 0.05,
+      staggerChildren: custom?.staggerChildren ?? 0.05,
+      delayChildren: custom?.delayChildren ?? 0,
     },
-  },
+  }),
 };
 
 const titleVariants = {
@@ -49,18 +52,37 @@ const iconVariants = {
   },
 };
 
-const TechCard = ({ title, description, data }) => {
+const TechCard = ({
+  title,
+  description,
+  data,
+  animateOnMount = false,
+  animationOptions = {},
+}) => {
+  const { theme } = useSelector(selectPortfolioSlice);
+
+  const motionProps = animateOnMount
+    ? { initial: "hidden", animate: "visible" }
+    : {
+        initial: "hidden",
+        whileInView: "visible",
+        viewport: { once: true, amount: 0.4 },
+      };
+
   return (
     <motion.div
       className="flex flex-col gap-6"
       variants={cardVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.4 }}
+      custom={animationOptions}
+      {...motionProps}
     >
       <motion.div variants={titleVariants} className="flex flex-col gap-1">
-        <span className="text-2xl text-white">{title}</span>
-        <span className="text-xl text-neutral-400">{description}</span>
+        <span
+          className={`text-2xl ${theme === "Dark" ? "text-white" : "text-[#121212]"}`}
+        >
+          {title}
+        </span>
+        <span className={`text-xl text-neutral-400`}>{description}</span>
       </motion.div>
 
       <motion.div
@@ -94,9 +116,11 @@ const TechStack = () => {
         <TechCard
           title={"Frontend Technologies"}
           description={
-            "Responsive, component-driven UI built with React + TypeScript and modern styling libraries."
+            "Responsive, component-driven UI built with React + JavaScript and modern styling libraries."
           }
           data={frontendTech}
+          animateOnMount
+          animationOptions={{ initialY: 48, staggerChildren: 0.03 }}
         />
         <TechCard
           title={"Backend Technologies"}
