@@ -2,7 +2,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectPortfolioSlice } from "../../portfolioSlice";
-import ProfilePic2 from "../../../assets/profile_pic_2.jpg";
 import ProfilePic1 from "../../../assets/profile_pic_1.webp";
 import { motion } from "framer-motion";
 import { BsEnvelope } from "react-icons/bs";
