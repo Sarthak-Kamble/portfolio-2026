@@ -13,8 +13,8 @@ const HomeSection = () => {
 
   return (
     <div
-      className={`h-full flex items-center justify-center py-28 lg:border-l lg:border-r w-full lg:w-[60%] mx-auto shadow 
-        ${theme === "Dark" ? "border-neutral-700" : "border-neutral-100"}
+      className={`h-full flex items-center justify-center py-28 shadow lg:border-l lg:border-r w-full lg:w-[60%] mx-auto
+        ${theme === "Dark" ? "border-neutral-700" : "border-neutral-100 tran"}
       `}
     >
       <div className={`flex flex-col items-center h-full justify-start w-full`}>
